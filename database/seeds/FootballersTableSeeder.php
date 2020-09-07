@@ -36,12 +36,19 @@ class FootballersTableSeeder extends Seeder
 
         foreach ($footballers_array as $footballer) {
           $new_footballer = new Footballer();
+
+          // First way
           // $new_footballer->name = $footballer["name"];
           // $new_footballer->lastname = $footballer["lastname"];
           // $new_footballer->nationality = $footballer["nationality"];
           // $new_footballer->position = $footballer["position"];
           // $new_footballer->age = $footballer["age"];
           // $new_footballer->description = $footballer["description"];
+
+          // Second way
+          $new_footballer->fill($footballer);
+
+          // Save data
           $new_footballer->save();
         }
     }
